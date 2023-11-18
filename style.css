@@ -1,0 +1,37 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+}
+
+#deductions {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#deductions h3 {
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+#deductions p {
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 600px) {
+    #output {
+        overflow-x: auto;
+    }
+
+    #output th,
+    #output td {
+        white-space: nowrap;
+    }
+}

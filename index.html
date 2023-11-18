@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Loan Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Loan Calculator</h2>
+        <form>
+            <div class="form-group">
+                <label for="principal">Loan Amount (KES):</label>
+                <input type="number" class="form-control" id="principal" name="principal">
+            </div>
+            <div class="form-group">
+                <label for="interest">Annual Interest Rate (%):</label>
+                <input type="number" class="form-control" id="interest" name="interest">
+            </div>
+            <div class="form-group">
+                <label for="months">Loan Term (months):</label>
+                <input type="number" class="form-control" id="months" name="months">
+            </div>
+            <div class="form-group">
+                <label for="method">Interest Calculation Method:</label>
+                <select class="form-control" id="method" name="method">
+                    <option value="normal">Normal Interest Rate</option>
+                    <option value="reducing">Reducing Balance Interest Method</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-success" onclick="calculateLoan()">Calculate</button>
+        </form>
+        <table class="table table-striped mt-5" id="output">
+            <thead>
+                <tr>
+                    <th>Payment Date</th>
+                    <th>Principal Payment (KES)</th>
+                    <th>Interest (KES)</th>
+                    <th>Total Payment (KES)</th>
+                    <th>Remaining (KES)</th>
+                    <th> <img width=25; height=25;
+                            src="https://th.bing.com/th/id/R.5db11a11450fc76fd6572e719a3544e7?rik=UuHIepjesz1tyw&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fdT6%2fxx8%2fdT6xx8Gac.png&ehk=YU%2bijKz%2fDwSxvTQ%2fuz1WBp%2fzH81b9Qa3LKtdE0G6tOo%3d&risl=&pid=ImgRaw&r=0"
+                            alt="PDF Icon" onclick="printPDF()">
+                    </th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="2">Total Interest (KES)</th>
+                    <td id="totalInterest"></td>
+                    <th>Total Repayment with Interest (KES)</th>
+                    <td id="totalRepayment"></td>
+                </tr>
+            </tfoot>
+        </table>
+        <div id="deductions" class="mt-5"></div>
+    </div>
+
+
+    <script src="loanCalculator.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js"></script>
+
+
+</body>
+
+</html>
